@@ -50,8 +50,8 @@
 			</p>
 			<center><div class="pure-menu pure-menu-horizontal">
 				<ul class="pure-menu-list">
-					<li class="pure-menu-item pure-menu-active"><a href="index.html" class="pure-menu-link">Ver 2.0</a></li>
-					<li class="pure-menu-item pure-menu-selected"><a href="ecohack.html" class="pure-menu-link">EcoHack</a></li>
+					<li class="pure-menu-item pure-menu-selected"><a href="index.html" class="pure-menu-link">Ver 2.0</a></li>
+					<li class="pure-menu-item pure-menu-active"><a href="ecohack.html" class="pure-menu-link">EcoHack</a></li>
 				</ul>
 			</div></center>
 		</div>
@@ -60,44 +60,63 @@
 	<div class="content-wrapper">
 		<div class="content">
 			<div class="pure-g">
-				<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+				<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
 					<h3 class="content-subhead">
 						Arduino и датчики
 					</h3>
 					<p>
-						Позволяет получать данные окружающей среды с любых подключенных датчиков. Необходима платформа Ардуино и датчики.
+						Позволяет получать данные окружающей среды со следующих сенсоров:
+						<ol>
+							<li>MQ2 C4H10 (изобутан)</li>
+							<li>MQ4 CH4 (концентрация метана)</li>
+							<li>MQ7 CO (угарный газ)</li>
+							<li>Датчик шума</li>
+						</ol>
 					</p>
 				</div>
-				<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+				<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 					<h3 class="content-subhead">
 						Android приложение
 					</h3>
 					<p>
-						Позволяет получать данные с Arduino и сохранить их в лог.
+						Позволяет получать данные с Arduino (и не только) и сохранить их в лог.
 						<center><a href="https://play.google.com/store/apps/details?id=com.nextgis.logger" class="pure-button pure-button-primary"><i class="fa fa-android"></i> Скачать</a>
 						<a href="https://github.com/nextgis/nextgislogger" class="pure-button pure-button-primary">GitHub</a></center>
 					</p>
 				</div>
+				<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+					<h3 class="content-subhead">
+						Собрать данные
+					</h3>
+					<p>
+						Определить методику и область сбора данных, собрать их.
+					</p>
+				</div>
+				<div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+					<h3 class="content-subhead">
+						Работа с данными
+					</h3>
+					<p>
+						Обработать и проанализировать данные, отобразить их на карте или в любом другом виде.
+					</p>
+				</div>
 			</div>
 			
-			<h2>О проекте</h2>
-			<p>Проект разработан в ходе <a style="color:#1DD700;" href="https://ecohack.te-st.ru/">экологического хакатона в Иркутске</a>. Текущая версия позволяет с легкостью подключить необходимые датчики к платформе Ардуино и немного преобразовав приведенный ниже скетч сразу же подключить их к приложению на Анроиде.</p>
-			
-			<h2>Схема подключения тестовых датчиков</h2>
+			<h2>Схема подключения датчиков</h2>
 
-			<a class="grouped_elements" rel="group2" href="images/sample_scheme.png"><img width=400 src="images/sample_scheme.png"/></a>
+			<img src="images/SensorLog_principal.JPG"/>
 			
-			<h2>Тестовый скетч</h2>
-			<samp id="c"></samp>
+			<h2>Карта концентрации угарного газа</h2>
+			<p>Пример работы с данными, получеными с помощью SensorLog в Иркутске. Показана концентрация СО (угарного газа) на улице Ленина и окрестностях.</p>
 
-			<script>
-			var file = "https://raw.githubusercontent.com/nextgis/nextgislogger/master/arduino/sample_sketch.ino";
+			<a class="grouped_elements" rel="group1" href="images/qgis1.png"><img width=600 src="images/qgis1.png"/></a>
+			<a class="grouped_elements" rel="group1" href="images/qgis2.png"><img width=600 src="images/qgis2.png"/></a>
 			
-			$.get(file,function(txt){
-				$( "#c" ).html(txt.replace(/\n/g, "<br />"));
-			});
-			</script>
+			<h2>Фотогалерея</h2>
+			<a class="grouped_elements" rel="group2" href="images/dev_stand.JPG"><img width=200 src="images/dev_stand.JPG"/></a>
+			<a class="grouped_elements" rel="group2" href="images/device_front.JPG"><img width=200 src="images/device_front.JPG"/></a>
+			<a class="grouped_elements" rel="group2" href="images/device_outer.JPG"><img width=200 src="images/device_outer.JPG"/></a>
 			
 			<br><br>
 			<script>$("a.grouped_elements").fancybox();</script>
